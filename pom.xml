@@ -8,7 +8,7 @@
 
     <artifactId>ultracommerce-sample-payment-gateway</artifactId>
     <name>UltraCommerce Sample Payment Gateway</name>
-    <description>BroadleafCommerce Sample Payment Gateway</description>
+    <description>UltraCommerce Sample Payment Gateway</description>
     <version>3.0.0-SNAPSHOT</version>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -63,13 +63,7 @@
         </repository>
     </distributionManagement>
     <dependencies>
-        <dependency>
-            <groupId>com.ultracommerce</groupId>
-            <artifactId>ultracommerce-third-party-integration-config</artifactId>
-            <version>default</version>
-            <optional>true</optional>
-            <scope>compile</scope>
-        </dependency>
+        
         <dependency>
             <groupId>com.ultracommerce</groupId>
             <artifactId>ultracommerce-common</artifactId>
