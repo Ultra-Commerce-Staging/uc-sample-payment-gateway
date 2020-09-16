@@ -47,7 +47,7 @@
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>license-maven-plugin</artifactId>
                 <configuration>
-                    <licenseName>uc_apache</licenseName>
+                    <licenseName>uc_confidential</licenseName>
                 </configuration>
             </plugin>
         </plugins>
