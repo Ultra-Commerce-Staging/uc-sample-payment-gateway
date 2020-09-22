@@ -1,37 +1,37 @@
 /*
  * #%L
- * BroadleafCommerce Framework Web
+ * UltraCommerce Framework Web
  * %%
- * Copyright (C) 2009 - 2013 Broadleaf Commerce
+ * Copyright (C) 2009 - 2013 Ultra Commerce
  * %%
- * Licensed under the Broadleaf End User License Agreement (EULA), Version 1.1
- * (the "Commercial License" located at http://license.broadleafcommerce.org/commercial_license-1.1.txt).
+ * Licensed under the Ultra End User License Agreement (EULA), Version 1.1
+ * (the "Commercial License" located at http://license.ultracommerce.org/commercial_license-1.1.txt).
  * 
  * Alternatively, the Commercial License may be replaced with a mutually agreed upon license (the "Custom License")
- * between you and Broadleaf Commerce. You may not use this file except in compliance with the applicable license.
+ * between you and Ultra Commerce. You may not use this file except in compliance with the applicable license.
  * 
  * NOTICE:  All information contained herein is, and remains
- * the property of Broadleaf Commerce, LLC
+ * the property of Ultra Commerce, LLC
  * The intellectual and technical concepts contained
- * herein are proprietary to Broadleaf Commerce, LLC
+ * herein are proprietary to Ultra Commerce, LLC
  * and may be covered by U.S. and Foreign Patents,
  * patents in process, and are protected by trade secret or copyright law.
  * Dissemination of this information or reproduction of this material
  * is strictly forbidden unless prior written permission is obtained
- * from Broadleaf Commerce, LLC.
+ * from Ultra Commerce, LLC.
  * #L%
  */
 
-package org.broadleafcommerce.vendor.sample.web.controller;
+package com.ultracommerce.vendor.sample.web.controller;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.broadleafcommerce.common.payment.dto.PaymentResponseDTO;
-import org.broadleafcommerce.common.payment.service.PaymentGatewayConfiguration;
-import org.broadleafcommerce.common.payment.service.PaymentGatewayWebResponseService;
-import org.broadleafcommerce.common.vendor.service.exception.PaymentException;
-import org.broadleafcommerce.common.web.payment.controller.PaymentGatewayAbstractController;
-import org.broadleafcommerce.vendor.sample.service.payment.SamplePaymentGatewayConstants;
+import com.ultracommerce.common.payment.dto.PaymentResponseDTO;
+import com.ultracommerce.common.payment.service.PaymentGatewayConfiguration;
+import com.ultracommerce.common.payment.service.PaymentGatewayWebResponseService;
+import com.ultracommerce.common.vendor.service.exception.PaymentException;
+import com.ultracommerce.common.web.payment.controller.PaymentGatewayAbstractController;
+import com.ultracommerce.vendor.sample.service.payment.SamplePaymentGatewayConstants;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -50,24 +50,24 @@ import javax.servlet.http.HttpServletRequest;
  * so that it can be processed in the system.
  *
  * In order to use this sample controller, you will need to component scan
- * the package "org.broadleafcommerce".
+ * the package "com.ultracommerce".
  *
  * This should NOT be used in production, and is meant solely for demonstration
  * purposes only.
  *
  * @author Elbert Bautista (elbertbautista)
  */
-@Controller("blSamplePaymentGatewayController")
+@Controller("ucSamplePaymentGatewayController")
 @RequestMapping("/" + SamplePaymentGatewayController.GATEWAY_CONTEXT_KEY)
 public class SamplePaymentGatewayController extends PaymentGatewayAbstractController {
 
     protected static final Log LOG = LogFactory.getLog(SamplePaymentGatewayController.class);
     protected static final String GATEWAY_CONTEXT_KEY = "sample-checkout";
 
-    @Resource(name = "blSamplePaymentGatewayWebResponseService")
+    @Resource(name = "ucSamplePaymentGatewayWebResponseService")
     protected PaymentGatewayWebResponseService paymentGatewayWebResponseService;
 
-    @Resource(name = "blSamplePaymentGatewayConfiguration")
+    @Resource(name = "ucSamplePaymentGatewayConfiguration")
     protected PaymentGatewayConfiguration paymentGatewayConfiguration;
 
     @Override

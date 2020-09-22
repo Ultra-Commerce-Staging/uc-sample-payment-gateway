@@ -1,7 +1,7 @@
-blc-sample-payment-gateway
+uc-sample-payment-gateway
 =============
 
-Broadleaf Sample Payment Gateway Integration - a sample payment gateway integration that does not integrate with an actual payment gateway. Its sole purpose is to demonstrate how the framework may integrate with a real gateway and demonstrate a sample implementation for many of the gateway interfaces.
+Ultra Sample Payment Gateway Integration - a sample payment gateway integration that does not integrate with an actual payment gateway. Its sole purpose is to demonstrate how the framework may integrate with a real gateway and demonstrate a sample implementation for many of the gateway interfaces.
 
 ### Sample Nonce Payment Submission
 
@@ -12,7 +12,7 @@ like the following:
 @RestController
 @RequestMapping(value = "/cart/checkout",
     produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
-public class SamplePaymentNonceCheckoutEndpoint extends com.broadleafcommerce.rest.api.endpoint.checkout.CheckoutEndpoint {
+public class SamplePaymentNonceCheckoutEndpoint extends com.ultracommerce.rest.api.endpoint.checkout.CheckoutEndpoint {
     
     @RequestMapping(method = RequestMethod.POST, value = "/complete")
     public String performCheckout(HttpServletRequest request,
@@ -61,13 +61,13 @@ public class SamplePaymentNonceCheckoutEndpoint extends com.broadleafcommerce.re
 
                 return paymentGatewayCheckoutService.initiateCheckout(cart.getId());
             } catch (Exception e) {
-                throw BroadleafWebServicesException.build(HttpStatus.SC_INTERNAL_SERVER_ERROR)
-                        .addMessage(BroadleafWebServicesException.CHECKOUT_PROCESSING_ERROR);
+                throw UltraWebServicesException.build(HttpStatus.SC_INTERNAL_SERVER_ERROR)
+                        .addMessage(UltraWebServicesException.CHECKOUT_PROCESSING_ERROR);
             }
         }
 
-        throw BroadleafWebServicesException.build(HttpStatus.SC_NOT_FOUND)
-                .addMessage(BroadleafWebServicesException.CART_NOT_FOUND);
+        throw UltraWebServicesException.build(HttpStatus.SC_NOT_FOUND)
+                .addMessage(UltraWebServicesException.CART_NOT_FOUND);
     }
 }
 ```

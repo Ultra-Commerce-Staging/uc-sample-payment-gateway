@@ -1,35 +1,35 @@
 /*
  * #%L
- * BroadleafCommerce Framework Web
+ * UltraCommerce Framework Web
  * %%
- * Copyright (C) 2009 - 2013 Broadleaf Commerce
+ * Copyright (C) 2009 - 2013 Ultra Commerce
  * %%
- * Licensed under the Broadleaf End User License Agreement (EULA), Version 1.1
- * (the "Commercial License" located at http://license.broadleafcommerce.org/commercial_license-1.1.txt).
+ * Licensed under the Ultra End User License Agreement (EULA), Version 1.1
+ * (the "Commercial License" located at http://license.ultracommerce.org/commercial_license-1.1.txt).
  * 
  * Alternatively, the Commercial License may be replaced with a mutually agreed upon license (the "Custom License")
- * between you and Broadleaf Commerce. You may not use this file except in compliance with the applicable license.
+ * between you and Ultra Commerce. You may not use this file except in compliance with the applicable license.
  * 
  * NOTICE:  All information contained herein is, and remains
- * the property of Broadleaf Commerce, LLC
+ * the property of Ultra Commerce, LLC
  * The intellectual and technical concepts contained
- * herein are proprietary to Broadleaf Commerce, LLC
+ * herein are proprietary to Ultra Commerce, LLC
  * and may be covered by U.S. and Foreign Patents,
  * patents in process, and are protected by trade secret or copyright law.
  * Dissemination of this information or reproduction of this material
  * is strictly forbidden unless prior written permission is obtained
- * from Broadleaf Commerce, LLC.
+ * from Ultra Commerce, LLC.
  * #L%
  */
 
-package org.broadleafcommerce.vendor.sample.web.processor;
+package com.ultracommerce.vendor.sample.web.processor;
 
-import org.broadleafcommerce.common.payment.dto.PaymentResponseDTO;
-import org.broadleafcommerce.common.payment.service.PaymentGatewayConfiguration;
-import org.broadleafcommerce.common.payment.service.PaymentGatewayTransparentRedirectService;
-import org.broadleafcommerce.common.web.payment.processor.AbstractTRCreditCardExtensionHandler;
-import org.broadleafcommerce.common.web.payment.processor.TRCreditCardExtensionManager;
-import org.broadleafcommerce.vendor.sample.service.payment.SamplePaymentGatewayConstants;
+import com.ultracommerce.common.payment.dto.PaymentResponseDTO;
+import com.ultracommerce.common.payment.service.PaymentGatewayConfiguration;
+import com.ultracommerce.common.payment.service.PaymentGatewayTransparentRedirectService;
+import com.ultracommerce.common.web.payment.processor.AbstractTRCreditCardExtensionHandler;
+import com.ultracommerce.common.web.payment.processor.TRCreditCardExtensionManager;
+import com.ultracommerce.vendor.sample.service.payment.SamplePaymentGatewayConstants;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
@@ -41,33 +41,33 @@ import javax.annotation.Resource;
 /**
  * This sample handler will add itself to the {@link TRCreditCardExtensionManager}
  * and will add some default hidden parameters/form POST URL for our fake
- * {@link org.broadleafcommerce.vendor.sample.web.controller.mock.processor.SampleMockProcessorController}
+ * {@link com.ultracommerce.vendor.sample.web.controller.mock.processor.SampleMockProcessorController}
  *
  * Note, we don't want this loaded into the extension manager
  * if a real payment gateway is used, so make sure to not scan this class when
  * using a real implementation. This is for demo purposes only.
  *
  * In order to use this sample extension handler, you will need to component scan
- * the package "com.broadleafcommerce".
+ * the package "com.ultracommerce".
  *
  * This should NOT be used in production, and is meant solely for demonstration
  * purposes only.
  *
  * @author Elbert Bautista (elbertbautista)
  */
-@Service("blSamplePaymentGatewayTRExtensionHandler")
+@Service("ucSamplePaymentGatewayTRExtensionHandler")
 public class SamplePaymentGatewayTRExtensionHandler extends AbstractTRCreditCardExtensionHandler {
 
     public static final String FORM_ACTION_URL = SamplePaymentGatewayConstants.TRANSPARENT_REDIRECT_URL;
     public static final String FORM_HIDDEN_PARAMS = "FORM_HIDDEN_PARAMS";
 
-    @Resource(name = "blTRCreditCardExtensionManager")
+    @Resource(name = "ucTRCreditCardExtensionManager")
     protected TRCreditCardExtensionManager extensionManager;
 
-    @Resource(name = "blSamplePaymentGatewayTransparentRedirectService")
+    @Resource(name = "ucSamplePaymentGatewayTransparentRedirectService")
     protected PaymentGatewayTransparentRedirectService transparentRedirectService;
 
-    @Resource(name = "blSamplePaymentGatewayConfiguration")
+    @Resource(name = "ucSamplePaymentGatewayConfiguration")
     protected PaymentGatewayConfiguration configuration;
 
     @PostConstruct

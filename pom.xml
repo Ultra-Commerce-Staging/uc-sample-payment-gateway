@@ -33,12 +33,12 @@
         <repository>
             <id>public releases</id>
             <name>public releases</name>
-            <url>http://broadleafcommerce.org/nexus/content/groups/community-releases</url>
+            <url>http://ultracommerce.org/nexus/content/groups/community-releases</url>
         </repository>
         <repository>
             <id>public snapshots</id>
             <name>public snapshots</name>
-            <url>http://broadleafcommerce.org/nexus/content/groups/community-snapshots/</url>
+            <url>http://ultracommerce.org/nexus/content/groups/community-snapshots/</url>
         </repository>
     </repositories>
     <build>

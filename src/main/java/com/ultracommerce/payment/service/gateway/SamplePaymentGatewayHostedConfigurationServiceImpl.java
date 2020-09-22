@@ -1,24 +1,24 @@
 /*
  * #%L
- * BroadleafCommerce Sample Payment Gateway
+ * UltraCommerce Sample Payment Gateway
  * %%
- * Copyright (C) 2009 - 2015 Broadleaf Commerce
+ * Copyright (C) 2009 - 2015 Ultra Commerce
  * %%
- * Licensed under the Broadleaf End User License Agreement (EULA), Version 1.1
- * (the "Commercial License" located at http://license.broadleafcommerce.org/commercial_license-1.1.txt).
+ * Licensed under the Ultra End User License Agreement (EULA), Version 1.1
+ * (the "Commercial License" located at http://license.ultracommerce.org/commercial_license-1.1.txt).
  * 
  * Alternatively, the Commercial License may be replaced with a mutually agreed upon license (the "Custom License")
- * between you and Broadleaf Commerce. You may not use this file except in compliance with the applicable license.
+ * between you and Ultra Commerce. You may not use this file except in compliance with the applicable license.
  * 
  * NOTICE:  All information contained herein is, and remains
- * the property of Broadleaf Commerce, LLC
+ * the property of Ultra Commerce, LLC
  * The intellectual and technical concepts contained
- * herein are proprietary to Broadleaf Commerce, LLC
+ * herein are proprietary to Ultra Commerce, LLC
  * and may be covered by U.S. and Foreign Patents,
  * patents in process, and are protected by trade secret or copyright law.
  * Dissemination of this information or reproduction of this material
  * is strictly forbidden unless prior written permission is obtained
- * from Broadleaf Commerce, LLC.
+ * from Ultra Commerce, LLC.
  * #L%
  */
 /*
@@ -37,25 +37,25 @@
  * limitations under the License.
  */
 
-package org.broadleafcommerce.payment.service.gateway;
+package com.ultracommerce.payment.service.gateway;
 
-import org.broadleafcommerce.common.payment.service.AbstractPaymentGatewayConfigurationService;
-import org.broadleafcommerce.common.payment.service.PaymentGatewayConfiguration;
-import org.broadleafcommerce.common.payment.service.PaymentGatewayConfigurationService;
-import org.broadleafcommerce.common.payment.service.PaymentGatewayCreditCardService;
-import org.broadleafcommerce.common.payment.service.PaymentGatewayCustomerService;
-import org.broadleafcommerce.common.payment.service.PaymentGatewayFraudService;
-import org.broadleafcommerce.common.payment.service.PaymentGatewayHostedService;
-import org.broadleafcommerce.common.payment.service.PaymentGatewayReportingService;
-import org.broadleafcommerce.common.payment.service.PaymentGatewayRollbackService;
-import org.broadleafcommerce.common.payment.service.PaymentGatewaySubscriptionService;
-import org.broadleafcommerce.common.payment.service.PaymentGatewayTransactionConfirmationService;
-import org.broadleafcommerce.common.payment.service.PaymentGatewayTransactionService;
-import org.broadleafcommerce.common.payment.service.PaymentGatewayTransparentRedirectService;
-import org.broadleafcommerce.common.payment.service.PaymentGatewayWebResponseService;
-import org.broadleafcommerce.common.web.payment.expression.PaymentGatewayFieldExtensionHandler;
-import org.broadleafcommerce.common.web.payment.processor.CreditCardTypesExtensionHandler;
-import org.broadleafcommerce.common.web.payment.processor.TRCreditCardExtensionHandler;
+import com.ultracommerce.common.payment.service.AbstractPaymentGatewayConfigurationService;
+import com.ultracommerce.common.payment.service.PaymentGatewayConfiguration;
+import com.ultracommerce.common.payment.service.PaymentGatewayConfigurationService;
+import com.ultracommerce.common.payment.service.PaymentGatewayCreditCardService;
+import com.ultracommerce.common.payment.service.PaymentGatewayCustomerService;
+import com.ultracommerce.common.payment.service.PaymentGatewayFraudService;
+import com.ultracommerce.common.payment.service.PaymentGatewayHostedService;
+import com.ultracommerce.common.payment.service.PaymentGatewayReportingService;
+import com.ultracommerce.common.payment.service.PaymentGatewayRollbackService;
+import com.ultracommerce.common.payment.service.PaymentGatewaySubscriptionService;
+import com.ultracommerce.common.payment.service.PaymentGatewayTransactionConfirmationService;
+import com.ultracommerce.common.payment.service.PaymentGatewayTransactionService;
+import com.ultracommerce.common.payment.service.PaymentGatewayTransparentRedirectService;
+import com.ultracommerce.common.payment.service.PaymentGatewayWebResponseService;
+import com.ultracommerce.common.web.payment.expression.PaymentGatewayFieldExtensionHandler;
+import com.ultracommerce.common.web.payment.processor.CreditCardTypesExtensionHandler;
+import com.ultracommerce.common.web.payment.processor.TRCreditCardExtensionHandler;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -63,22 +63,22 @@ import javax.annotation.Resource;
 /**
  * @author Elbert Bautista (elbertbautista)
  */
-@Service("blSamplePaymentGatewayHostedConfigurationService")
+@Service("ucSamplePaymentGatewayHostedConfigurationService")
 public class SamplePaymentGatewayHostedConfigurationServiceImpl extends AbstractPaymentGatewayConfigurationService {
 
-    @Resource(name = "blSamplePaymentGatewayHostedConfiguration")
+    @Resource(name = "ucSamplePaymentGatewayHostedConfiguration")
     protected SamplePaymentGatewayHostedConfiguration configuration;
 
-    @Resource(name = "blSamplePaymentGatewayHostedRollbackService")
+    @Resource(name = "ucSamplePaymentGatewayHostedRollbackService")
     protected PaymentGatewayRollbackService rollbackService;
 
-    @Resource(name = "blSamplePaymentGatewayHostedService")
+    @Resource(name = "ucSamplePaymentGatewayHostedService")
     protected PaymentGatewayHostedService hostedService;
 
-    @Resource(name = "blSamplePaymentGatewayHostedTransactionConfirmationService")
+    @Resource(name = "ucSamplePaymentGatewayHostedTransactionConfirmationService")
     protected PaymentGatewayTransactionConfirmationService transactionConfirmationService;
 
-    @Resource(name = "blSamplePaymentGatewayHostedWebResponseService")
+    @Resource(name = "ucSamplePaymentGatewayHostedWebResponseService")
     protected PaymentGatewayWebResponseService webResponseService;
 
     public PaymentGatewayConfiguration getConfiguration() {

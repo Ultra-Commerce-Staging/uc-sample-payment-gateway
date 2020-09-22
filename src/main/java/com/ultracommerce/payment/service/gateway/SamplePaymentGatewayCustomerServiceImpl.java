@@ -1,37 +1,37 @@
 /*
  * #%L
- * BroadleafCommerce Sample Payment Gateway
+ * UltraCommerce Sample Payment Gateway
  * %%
- * Copyright (C) 2009 - 2017 Broadleaf Commerce
+ * Copyright (C) 2009 - 2017 Ultra Commerce
  * %%
- * Licensed under the Broadleaf End User License Agreement (EULA), Version 1.1
- * (the "Commercial License" located at http://license.broadleafcommerce.org/commercial_license-1.1.txt).
+ * Licensed under the Ultra End User License Agreement (EULA), Version 1.1
+ * (the "Commercial License" located at http://license.ultracommerce.org/commercial_license-1.1.txt).
  * 
  * Alternatively, the Commercial License may be replaced with a mutually agreed upon license (the "Custom License")
- * between you and Broadleaf Commerce. You may not use this file except in compliance with the applicable license.
+ * between you and Ultra Commerce. You may not use this file except in compliance with the applicable license.
  * 
  * NOTICE:  All information contained herein is, and remains
- * the property of Broadleaf Commerce, LLC
+ * the property of Ultra Commerce, LLC
  * The intellectual and technical concepts contained
- * herein are proprietary to Broadleaf Commerce, LLC
+ * herein are proprietary to Ultra Commerce, LLC
  * and may be covered by U.S. and Foreign Patents,
  * patents in process, and are protected by trade secret or copyright law.
  * Dissemination of this information or reproduction of this material
  * is strictly forbidden unless prior written permission is obtained
- * from Broadleaf Commerce, LLC.
+ * from Ultra Commerce, LLC.
  * #L%
  */
-package org.broadleafcommerce.payment.service.gateway;
+package com.ultracommerce.payment.service.gateway;
 
-import org.broadleafcommerce.common.payment.CreditCardType;
-import org.broadleafcommerce.common.payment.PaymentType;
-import org.broadleafcommerce.common.payment.dto.GatewayCustomerDTO;
-import org.broadleafcommerce.common.payment.dto.PaymentRequestDTO;
-import org.broadleafcommerce.common.payment.dto.PaymentResponseDTO;
-import org.broadleafcommerce.common.payment.service.AbstractPaymentGatewayCustomerService;
-import org.broadleafcommerce.common.vendor.service.exception.PaymentException;
-import org.broadleafcommerce.vendor.sample.service.payment.PaymentTransactionType;
-import org.broadleafcommerce.vendor.sample.service.payment.SamplePaymentGatewayType;
+import com.ultracommerce.common.payment.CreditCardType;
+import com.ultracommerce.common.payment.PaymentType;
+import com.ultracommerce.common.payment.dto.GatewayCustomerDTO;
+import com.ultracommerce.common.payment.dto.PaymentRequestDTO;
+import com.ultracommerce.common.payment.dto.PaymentResponseDTO;
+import com.ultracommerce.common.payment.service.AbstractPaymentGatewayCustomerService;
+import com.ultracommerce.common.vendor.service.exception.PaymentException;
+import com.ultracommerce.vendor.sample.service.payment.PaymentTransactionType;
+import com.ultracommerce.vendor.sample.service.payment.SamplePaymentGatewayType;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
 
@@ -40,7 +40,7 @@ import java.util.Random;
 /**
  * @author Chris Kittrell (ckittrell)
  */
-@Service("blSamplePaymentGatewayCustomerService")
+@Service("ucSamplePaymentGatewayCustomerService")
 public class SamplePaymentGatewayCustomerServiceImpl extends AbstractPaymentGatewayCustomerService {
 
     public static final String RESPONSE_MAP_KEY_PREFEIX = "customer";

@@ -1,34 +1,34 @@
 /*
  * #%L
- * BroadleafCommerce Framework Web
+ * UltraCommerce Framework Web
  * %%
- * Copyright (C) 2009 - 2013 Broadleaf Commerce
+ * Copyright (C) 2009 - 2013 Ultra Commerce
  * %%
- * Licensed under the Broadleaf End User License Agreement (EULA), Version 1.1
- * (the "Commercial License" located at http://license.broadleafcommerce.org/commercial_license-1.1.txt).
+ * Licensed under the Ultra End User License Agreement (EULA), Version 1.1
+ * (the "Commercial License" located at http://license.ultracommerce.org/commercial_license-1.1.txt).
  * 
  * Alternatively, the Commercial License may be replaced with a mutually agreed upon license (the "Custom License")
- * between you and Broadleaf Commerce. You may not use this file except in compliance with the applicable license.
+ * between you and Ultra Commerce. You may not use this file except in compliance with the applicable license.
  * 
  * NOTICE:  All information contained herein is, and remains
- * the property of Broadleaf Commerce, LLC
+ * the property of Ultra Commerce, LLC
  * The intellectual and technical concepts contained
- * herein are proprietary to Broadleaf Commerce, LLC
+ * herein are proprietary to Ultra Commerce, LLC
  * and may be covered by U.S. and Foreign Patents,
  * patents in process, and are protected by trade secret or copyright law.
  * Dissemination of this information or reproduction of this material
  * is strictly forbidden unless prior written permission is obtained
- * from Broadleaf Commerce, LLC.
+ * from Ultra Commerce, LLC.
  * #L%
  */
 
-package org.broadleafcommerce.vendor.sample.web.expression;
+package com.ultracommerce.vendor.sample.web.expression;
 
-import org.broadleafcommerce.common.payment.PaymentGatewayType;
-import org.broadleafcommerce.common.payment.service.PaymentGatewayConfiguration;
-import org.broadleafcommerce.common.web.payment.expression.AbstractPaymentGatewayFieldExtensionHandler;
-import org.broadleafcommerce.common.web.payment.expression.PaymentGatewayFieldExtensionManager;
-import org.broadleafcommerce.vendor.sample.service.payment.SamplePaymentGatewayConstants;
+import com.ultracommerce.common.payment.PaymentGatewayType;
+import com.ultracommerce.common.payment.service.PaymentGatewayConfiguration;
+import com.ultracommerce.common.web.payment.expression.AbstractPaymentGatewayFieldExtensionHandler;
+import com.ultracommerce.common.web.payment.expression.PaymentGatewayFieldExtensionManager;
+import com.ultracommerce.vendor.sample.service.payment.SamplePaymentGatewayConstants;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
@@ -37,27 +37,27 @@ import javax.annotation.Resource;
 /**
  * This sample handler will add itself to the {@link PaymentGatewayFieldExtensionManager}
  * and will output the input NAMEs that are required by the
- * {@link org.broadleafcommerce.vendor.sample.web.controller.mock.processor.SampleMockProcessorController}
+ * {@link com.ultracommerce.vendor.sample.web.controller.mock.processor.SampleMockProcessorController}
  *
  * Note, we don't want this loaded into the extension manager
  * if a real payment gateway is used, so make sure to not scan this class when
  * using a real implementation.
  *
  * In order to use this sample extension handler, you will need to component scan
- * the package "com.broadleafcommerce".
+ * the package "com.ultracommerce".
  *
  * This should NOT be used in production, and is meant solely for demonstration
  * purposes only.
  *
  * @author Elbert Bautista (elbertbautista)
  */
-@Service("blSamplePaymentGatewayFieldExtensionHandler")
+@Service("ucSamplePaymentGatewayFieldExtensionHandler")
 public class SamplePaymentGatewayFieldExtensionHandler extends AbstractPaymentGatewayFieldExtensionHandler {
 
-    @Resource(name = "blPaymentGatewayFieldExtensionManager")
+    @Resource(name = "ucPaymentGatewayFieldExtensionManager")
     protected PaymentGatewayFieldExtensionManager extensionManager;
 
-    @Resource(name = "blSamplePaymentGatewayConfiguration")
+    @Resource(name = "ucSamplePaymentGatewayConfiguration")
     protected PaymentGatewayConfiguration paymentGatewayConfiguration;
 
     @PostConstruct

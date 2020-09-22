@@ -1,45 +1,45 @@
 /*
  * #%L
- * BroadleafCommerce Framework Web
+ * UltraCommerce Framework Web
  * %%
- * Copyright (C) 2009 - 2013 Broadleaf Commerce
+ * Copyright (C) 2009 - 2013 Ultra Commerce
  * %%
- * Licensed under the Broadleaf End User License Agreement (EULA), Version 1.1
- * (the "Commercial License" located at http://license.broadleafcommerce.org/commercial_license-1.1.txt).
+ * Licensed under the Ultra End User License Agreement (EULA), Version 1.1
+ * (the "Commercial License" located at http://license.ultracommerce.org/commercial_license-1.1.txt).
  * 
  * Alternatively, the Commercial License may be replaced with a mutually agreed upon license (the "Custom License")
- * between you and Broadleaf Commerce. You may not use this file except in compliance with the applicable license.
+ * between you and Ultra Commerce. You may not use this file except in compliance with the applicable license.
  * 
  * NOTICE:  All information contained herein is, and remains
- * the property of Broadleaf Commerce, LLC
+ * the property of Ultra Commerce, LLC
  * The intellectual and technical concepts contained
- * herein are proprietary to Broadleaf Commerce, LLC
+ * herein are proprietary to Ultra Commerce, LLC
  * and may be covered by U.S. and Foreign Patents,
  * patents in process, and are protected by trade secret or copyright law.
  * Dissemination of this information or reproduction of this material
  * is strictly forbidden unless prior written permission is obtained
- * from Broadleaf Commerce, LLC.
+ * from Ultra Commerce, LLC.
  * #L%
  */
 
-package org.broadleafcommerce.payment.service.gateway;
+package com.ultracommerce.payment.service.gateway;
 
-import org.broadleafcommerce.common.payment.PaymentGatewayType;
-import org.broadleafcommerce.common.payment.service.AbstractPaymentGatewayConfiguration;
-import org.broadleafcommerce.common.web.BroadleafRequestContext;
-import org.broadleafcommerce.vendor.sample.service.payment.SamplePaymentGatewayType;
+import com.ultracommerce.common.payment.PaymentGatewayType;
+import com.ultracommerce.common.payment.service.AbstractPaymentGatewayConfiguration;
+import com.ultracommerce.common.web.UltraRequestContext;
+import com.ultracommerce.vendor.sample.service.payment.SamplePaymentGatewayType;
 import org.springframework.stereotype.Service;
 
 /**
  * In order to use load this demo service, you will need to component scan
- * the package "com.broadleafcommerce".
+ * the package "com.ultracommerce".
  *
  * This should NOT be used in production, and is meant solely for demonstration
  * purposes only.
  *
  * @author Elbert Bautista (elbertbautista)
  */
-@Service("blSamplePaymentGatewayConfiguration")
+@Service("ucSamplePaymentGatewayConfiguration")
 public class SamplePaymentGatewayConfigurationImpl extends AbstractPaymentGatewayConfiguration implements SamplePaymentGatewayConfiguration {
 
     protected int failureReportingThreshold = 1;
@@ -48,22 +48,22 @@ public class SamplePaymentGatewayConfigurationImpl extends AbstractPaymentGatewa
 
     @Override
     public String getTransparentRedirectUrl() {
-        return BroadleafRequestContext.getBroadleafRequestContext().getWebRequest().getContextPath() + "/sample-checkout/process";
+        return UltraRequestContext.getUltraRequestContext().getWebRequest().getContextPath() + "/sample-checkout/process";
     }
 
     @Override
     public String getTransparentRedirectReturnUrl() {
-        return BroadleafRequestContext.getBroadleafRequestContext().getWebRequest().getContextPath() + "/sample-checkout/return";
+        return UltraRequestContext.getUltraRequestContext().getWebRequest().getContextPath() + "/sample-checkout/return";
     }
     
     @Override
     public String getCustomerPaymentTransparentRedirectUrl() {
-        return BroadleafRequestContext.getBroadleafRequestContext().getWebRequest().getContextPath() + "/sample-customer-payment/process";
+        return UltraRequestContext.getUltraRequestContext().getWebRequest().getContextPath() + "/sample-customer-payment/process";
     }
     
     @Override
     public String getCustomerPaymentTransparentRedirectReturnUrl() {
-        return BroadleafRequestContext.getBroadleafRequestContext().getWebRequest().getContextPath() + "/sample-customer-payment/return";
+        return UltraRequestContext.getUltraRequestContext().getWebRequest().getContextPath() + "/sample-customer-payment/return";
     }
 
 
